@@ -19,7 +19,7 @@ public class ApiErrorHandler extends ResponseEntityExceptionHandler {
     public ResponseEntity<ApiError> handleAll(Exception ex, WebRequest request) {
         logger.error("Unhandled Error Occurred", ex);
         ApiError apiError = ApiError.builder()
-                .code("101")
+                .code("100")
                 .message("Pac Unhandled Error")
                 .timestamp(LocalDateTime.now())
                 .status(HttpStatus.INTERNAL_SERVER_ERROR.value())
